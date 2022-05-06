@@ -52,7 +52,7 @@ def command(command):
         except Exception as error:
 
             # Post some error info to chat
-            mc.postToChat(f'Fatal error in {command} plugin!')
+            mc.postToChat(f'Fatal error in {command.split(" ")[0]} plugin!')
             mc.postToChat("Check terminal output for a traceback")
 
     # Check if the command is in the commands folder
