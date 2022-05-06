@@ -13,6 +13,9 @@ search = ""
 # Set plugins to the contents of the plugins directory
 plugins = listdir("plugins")
 
+# Remove helper files (files starting with an underscore)
+plugins = [plugin for plugin in plugins if not plugin.startswith('_')]
+
 # Check if any arguments were giving
 if len(argv) > 1:
 
