@@ -1,0 +1,473 @@
+# Made by Wallee#8314/Red-exe-Engineer
+# Thanks @Bigjango helping :p
+
+# Modified to work with lowercase words
+# This isn't a command but is used by some
+
+Block = {
+    "air": [0, 0],
+    "stone": [1, 0],
+    "grass": [2, 0],
+    "dirt": [3, 0],
+    "cobblestone": [4, 0],
+    "wooden-planks": [5, 0],
+    "saplin":[6, 0],
+    "oak-saplin": [6, 0],
+    "spruce-saplin": [6, 1],
+    "birch-saplin": [6, 2],
+    "bedrock": [7, 0],
+    "water": [8, 0],
+    "water-stationary": [9, 0],
+    "lava": [10, 0],
+    "lava-staionary": [11, 0],
+    "sand": [12, 0],
+    "gravel": [13, 0],
+    "gold-ore": [14, 0],
+    "iron-ore": [15, 0],
+    "coal-ore": [16, 0],
+    "log": [17, 0],
+    "oak-log": [17, 0],
+    "spruce-log": [17, 1],
+    "birch-log": [17, 2],
+    "leaves": [18, 0],
+    "oak-leaves": [18, 0],
+    "spruce-leaves": [18, 1],
+    "birch-leaves": [18, 2],
+    "glass": [20, 0],
+    "lapis-lazuli-ore": [21, 0],
+    "lapis-lazuli-block": [22, 0],
+    "sandstone": [24, 0],
+    "chiseled-sandstone": [24, 1],
+    "smooth-sandstone": [24, 2],
+    "bed": [26, 0],
+    "bed-foot": [26, 0],
+    "bed-head": [26, 8],
+    "north-bed-foot": [26, 0],
+    "north-bed-head": [26, 8],
+    "east-bed-foot": [26, 1],
+    "east-bed-head": [26, 9],
+    "south-bed-foot": [26, 2],
+    "south-bed-head": [26, 10],
+    "west-bed-foot": [26, 3],
+    "west-bed-head": [26, 11],
+    "cobweb": [30, 0],
+    "shrub": [31, 0],
+    "tall-grass": [31, 1],
+    "fern": [31, 3],
+    "wool": [35, 0],
+    "white-wool": [35, 0],
+    "orange-wool": [35, 1],
+    "magenta-wool": [35, 2],
+    "light-blue-wool": [35, 3],
+    "yello-wool": [35, 4],
+    "lime-wool": [35, 5],
+    "pink-wool": [35, 6],
+    "grey-wool": [35, 7],
+    "light-grey-wool": [35, 8],
+    "cyan-wool": [35, 9],
+    "purple-wool": [35, 10],
+    "blue-wool": [35, 11],
+    "brown-wool": [35, 12],
+    "green-wool": [35, 13],
+    "red-wool": [35, 14],
+    "black-wool": [35, 15],
+    "flower": [37, 0],
+    "poppy": [38, 0],
+    "brown-mushroom": [39, 0],
+    "red-mushroom": [40, 0],
+    "block-of-gold": [41, 0],
+    "block-of-iron": [42, 0],
+    "double-stone-slab": [43, 0],
+    "smooth-stone": [43, 6],
+    "stone-slab": [44, 0],
+    "sandstone-slab": [44, 1],
+    "wooden-slab": [44, 2],
+    "cobblestone-slab": [44, 3],
+    "bricks-slab": [44, 4],
+    "stone-bricks-slab": [44, 5],
+    "lower-stone-slab": [44, 0],
+    "lower-sandstone-slab": [44, 1],
+    "lower-wooden-slab": [44, 2],
+    "lower-cobblestone-slab": [44, 3],
+    "lower-bricks-slab": [44, 4],
+    "lower-stone-bricks-slab": [44, 5],
+    "upper-stone-slab": [44, 8],
+    "upper-sandstone-slab": [44, 9],
+    "upper-wooden-slab": [44, 10],
+    "upper-cobblestone-slab": [44, 11],
+    "upper-bricks-slab": [44, 12],
+    "upper-stone-bricks-slab": [44, 13],
+    "stone-slab-block": [43, 0],
+    "sandstone-slab-block": [43, 1],
+    "wooden-slab-block": [43, 2],
+    "cobblestone-slab-block": [43, 3],
+    "bricks-slab-block": [43, 4],
+    "stone-bricks-slab-block": [43, 5],
+    "smooth-stone": [43, 6],
+    "bricks": [45, 0],
+    "tnt": [46, 0],
+    "active-tnt": [46, 1],
+    "bookshelf": [47, 0],
+    "moss-stone": [48, 0],
+    "obsidian": [49, 0],
+    "torch": [50, 0],
+    "wooden-stairs": [53, 2],
+    "north-lower-wooden-stairs": [53, 2],
+    "east-lower-wooden-stairs": [53, 1],
+    "south-lower-wooden-stairs": [53, 3],
+    "west-lower-wooden-stairs": [53, 0],
+    "north-upper-wooden-stairs": [53, 6],
+    "east-upper-wooden-stairs": [53, 5],
+    "south-upper-wooden-stairs": [53, 7],
+    "west-upper-wooden-stairs": [53, 4],
+    "chest": [54, 2],
+    "blank-chest": [54, 1],
+    "north-chest": [54, 2],
+    "east-chest": [54, 5],
+    "south-chest": [54, 3],
+    "west-chest": [54, 4],
+    "diamond-ore": [56, 0],
+    "diamond-block": [57, 0],
+    "crafting-table": [58, 0],
+    "crops": [59, 0],
+    "crops-1": [59, 1],
+    "crops-2": [59, 2],
+    "crops-3": [59, 3],
+    "crops-4": [59, 4],
+    "crops-5": [59, 5],
+    "crops-6": [59, 6],
+    "crops-7": [59, 7],
+    "farmland": [60, 0],
+    "wet-farmland": [60, 1],
+    "furnace": [61, 0],
+    "active-furnace": [62, 0],
+    "sign": [63, 0],
+    "sign-0": [63, 0],
+    "sign-1": [63, 1],
+    "sign-2": [63, 2],
+    "sign-3": [63, 3],
+    "sign-4": [63, 4],
+    "sign-5": [63, 5],
+    "sign-6": [63, 6],
+    "sign-7": [63, 7],
+    "sign-8": [63, 8],
+    "sign-9": [63, 9],
+    "sign-10": [63, 10],
+    "sign-11": [63, 11],
+    "sign-12": [63, 12],
+    "sign-13": [63, 13],
+    "sign-14": [63, 14],
+    "sign-15": [63, 15],
+    "lower-north-closed-wooden-door": [64, 1],
+    "lower-north-opened-wooden-door": [64, 5],
+    "lower-east-closed-wooden-door": [64, 2],
+    "lower-east-opened-wooden-door": [64, 2],
+    "lower-south-closed-wooden-door": [46, 3],
+    "lower-south-opened-wooden-door": [64, 7],
+    "lower-west-closed-wooden-door": [64, 0],
+    "lower-west-opened-wooden-door": [64, 4],
+    "upper-left-wooden-door": [64, 8],
+    "upper-right--wooden-door": [64, 9],
+    "lower-wooden-door": [64, 1],
+    "upper-wooden-door": [64, 8],
+    "ladder": [65, 2],
+    "north-ladder": [65, 2],
+    "east-ladder": [65, 5],
+    "south-ladder": [65, 3],
+    "west-ladder": [65, 4],
+    "cobblestone-stairs": [67, 2],
+    "north-lower-cobblestone-stairs": [67, 2],
+    "east-lower-cobblestone-stairs": [67, 1],
+    "south-lower-cobblestone-stairs": [67, 3],
+    "west-lower-cobblestone-stairs": [67, 0],
+    "north-upper-cobbleston-stairs": [57, 6],
+    "east-upper-cobbleston-stairs": [57, 5],
+    "south-upper-cobbleston-stairs": [57, 7],
+    "west-upper-cobbleston-stairs": [57, 4],
+    "wall-sign": [68, 2],
+    "north-wall-sign": [68, 2],
+    "east-wall-sign": [68, 5],
+    "south-wall-sign": [68, 1],
+    "west-wall-sign": [68, 4],
+    "lower-north-closed-iron-door": [71, 1],
+    "lower-north-opened-iron-door": [71, 5],
+    "lower-east-closed-iron-door": [71, 2],
+    "lower-east-opened-iron-door": [71, 2],
+    "lower-south-closed-iron-door": [71, 3],
+    "lower-south-opened-iron-door": [71, 7],
+    "lower-west-closed-iron-door": [71, 0],
+    "lower-west-opened-iron-door": [71, 4],
+    "upper-left-iron-door": [71, 8],
+    "upper-right--iron-door": [71, 9],
+    "lower-iron-door": [71, 1],
+    "upper-iron-door": [71, 8],
+    "redstone-ore": [73, 0],
+    "snow": [78, 0],
+    "ice": [79, 0],
+    "snow-block": [80, 0],
+    "cactus": [81, 0],
+    "clay-block": [82, 0],
+    "sugercane": [83, 0],
+    "fence": [85, 0],
+    "glowstone-block": [89, 0],
+    "invisible-bedrock": [95, 0],
+    "trapdoor": [96, 0],
+    "north-closed-trapdoor": [96, 0],
+    "east-closed-trapdoor": [96, 3],
+    "south-closed-trapdoor": [96, 1],
+    "west-closed-trapdoor": [96, 2],
+    "north-opened-trapdoor": [96, 4],
+    "east-opened-trapdoor": [96, 7],
+    "south-opened-trapdoor": [96, 5],
+    "west-opened-trapdoor": [96, 6],
+    "stone-bricks": [98, 0],
+    "mossy-stone-bricks": [98, 1],
+    "cracked-stone-bricks": [98, 2],
+    "glass-pane": [102, 0],
+    "melon": [103, 0],
+    "melon-stem": [105, 0],
+    "melon-stem-0": [105, 0],
+    "melon-stem-1": [105, 1],
+    "melon-stem-2": [105, 2],
+    "melon-stem-3": [105, 3],
+    "melon-stem-4": [105, 4],
+    "melon-stem-5": [105, 5],
+    "melon-stem-6": [105, 6],
+    "melon-stem-7": [105, 7],
+    "fence-gate": [107, 0],
+    "north-south-fence-gate": [107, 0],
+    "south-north-fence-gate": [107, 0],
+    "east-west-closed-fence-gate": [107, 3],
+    "west-west-closed-fence-gate": [107, 3],
+    "north-opened-fence-gate": [107, 4],
+    "east-opened-fence-gate": [107, 5],
+    "south-opened-fence-gate": [107, 6],
+    "west-opened-fence-gate": [107, 7],
+    "brick-stairs": [108, 2],
+    "north-lower-brick-stairs": [108, 2],
+    "east-lower-brick-stairs": [108, 1],
+    "south-lower-brick-stairs": [108, 3],
+    "west-lower-brick-stairs": [108, 0],
+    "north-upper-brick-stairs": [108, 6],
+    "east-upper-brick-stairs": [108, 5],
+    "south-upper-brick-stairs": [108, 7],
+    "west-upper-brick-stairs": [108, 4],
+    "stone-brick-stairs": [109, 2],
+    "north-lower-stone-brick-stairs": [109, 2],
+    "east-lower-stone-brick-stairs": [109, 1],
+    "south-lower-stone-brick-stairs": [109, 3],
+    "west-lower-stone-brick-stairs": [109, 0],
+    "north-upper-stone-brick-stairs": [109, 6],
+    "east-upper-stone-brick-stairs": [109, 5],
+    "south-upper-stone-brick-stairs": [109, 7],
+    "west-upper-stone-brick-stairs": [109, 4],
+    "nether-brick-stairs": [114, 2],
+    "north-lower-nether-brick-stairs": [114, 2],
+    "east-lower-nether-brick-stairs": [114, 1],
+    "south-lower-nether-brick-stairs": [114, 3],
+    "west-lower-nether-brick-stairs": [114, 0],
+    "north-upper-nether-brick-stairs": [114, 6],
+    "east-upper-nether-brick-stairs": [114, 5],
+    "south-upper-nether-brick-stairs": [114, 7],
+    "west-upper-nether-brick-stairs": [114, 4],
+    "sandstone-stairs": [128, 2],
+    "north-lower-sandstone-stairs": [128, 2],
+    "east-lower-sandstone-stairs": [128, 1],
+    "south-lower-sandstone-stairs": [128, 3],
+    "west-lower-sandstone-stairs": [128, 0],
+    "north-upper-sandstone-stairs": [128, 6],
+    "east-upper-sandstone-stairs": [128, 5],
+    "south-upper-sandstone-stairs": [128, 7],
+    "west-upper-sandstone-stairs": [128, 4],
+    "block-of-quartz": [155, 0],
+    "chiseled-quartz-block": [155, 1],
+    "quartz-pillar": [155, 2],
+    "glowing-obsidian": [246, 0],
+    "nether-reactor-core": [247, 0],
+    "active-nether-reactor-core": [247, 1],
+    "used-nether-reactor-core": [247, 2],
+    "update": [248, 0],
+    "ateupd": [249, 0],
+    "held-grass": [253, 0],
+    "held-leaves": [254, 0],
+    "held-oak-leaves": [254, 0],
+    "held-spruce-leaves": [254, 1],
+    "held-birch-leaves": [254, 2],
+    "fire": [255, 0]
+}
+
+Item = {
+    "iron-shovel": 256,
+    "iron-pickaxe": 257,
+    "iron-axe": 258,
+    "flint-and-steel": 259,
+    "apple": 260,
+    "bow": 261,
+    "arrow": 262,
+    "coal": 263,
+    "diamond": 264,
+    "iron-ingot": 265,
+    "gold-ingot": 266,
+    "iron-sword": 267,
+    "wooden-sword": 268,
+    "wooden-shovel": 269,
+    "wooden-pickaxe": 270,
+    "wooden-axe": 271,
+    "stone-sword": 272,
+    "stone-shovel": 273,
+    "stone-pickaxe": 274,
+    "stone-axe": 275,
+    "diamond-sword": 276,
+    "diamond-shovel": 277,
+    "diamond-pickace": 278,
+    "diamond-axe": 279,
+    "stick": 280,
+    "bowl": 281,
+    "mushroom-stew": 282,
+    "gold-sword": 283,
+    "gold-shovel": 284,
+    "gold-pickaxe": 285,
+    "gold-axe": 286,
+    "string": 287,
+    "feather": 288,
+    "gunpowder": 289,
+    "wooden-hoe": 290,
+    "stone-hoe": 291,
+    "iron-hoe": 292,
+    "diamond-hoe": 293,
+    "gold-hoe": 294,
+    "seeds": 295,
+    "wheet": 296,
+    "bread": 297,
+    "leather-cap": 298,
+    "leather-tunic": 299,
+    "leather-pants": 300,
+    "leather-boots": 301,
+    "chain-helmet": 302,
+    "chain-chestplate": 303,
+    "chain-leggings": 304,
+    "chain-boots": 305,
+    "iron-helmet": 306,
+    "iron-chestplate": 307,
+    "iron-leggings": 308,
+    "iron-boots": 309,
+    "diamond-helmet": 310,
+    "diamond-chestplate": 311,
+    "diamond-leggings": 312,
+    "diamond-boots": 313,
+    "gold-helmet": 314,
+    "gold-chestplate": 315,
+    "gold-leggings": 316,
+    "gold-boots": 317,
+    "flint": 318,
+    "raw-porkchop": 319,
+    "cooked-porkchop": 320,
+    "painting": 321,
+    "sign": 323,
+    "wooden-door": 324,
+    "iron-door": 330,
+    "snowball": 332,
+    "leather": 334,
+    "brick": 336,
+    "clay": 337,
+    "sugarcane": 338,
+    "paper": 339,
+    "book": 340,
+    "slimeball": 341,
+    "egg": 344,
+    "compass": 345,
+    "clock": 347,
+    "glowstone-dust": 248,
+    "dye": 351,
+    "bone": 352,
+    "sugar": 353,
+    "bed": 356,
+    "shears": 359,
+    "melon": 360,
+    "melon-seeds": 362,
+    "raw-beef": 363,
+    "steak": 364,
+    "raw-chicken": 365,
+    "cooked-chicken": 366,
+    "camera": 456
+    }
+
+def searchBlock(search="", printName=False):
+
+    search = search.lower()
+    IDs = []
+
+    for block in Block:
+
+        blockName = block.lower()
+
+        if search in blockName:
+            IDs.append([block, Block[block]])
+
+            if printName == True:
+                print(f'{block} ({Block[block]})')
+    return(dict(IDs))
+
+def searchItem(search="", printName=False):
+
+    search = search.lower()
+    IDs = []
+
+    for item in Item:
+
+        itemName = item.lower()
+
+        if search in itemName:
+            IDs.append([item, Item[item]])
+
+            if printName == True:
+                print(f'{item} ({Item[item]})')
+    return(dict(IDs))
+
+def searchAll(search="", printName=False):
+
+    search = search.lower()
+    IDs = []
+
+    for block in Block:
+
+        blockName = block.lower()
+
+        if search in blockName:
+            IDs.append([block, Block[block]])
+
+            if printName == True:
+                print(f'{block} ({Block[block]})')
+
+    for item in Item:
+
+        itemName = item.lower()
+
+        if search in itemName:
+            IDs.append([item, Item[item]])
+
+            if printName == True:
+                print(f'{item} ({Item[item]})')
+    return(dict(IDs))
+
+def getBlockID(block):
+    try:
+        ID = Block[block]
+    except:
+        ID = None
+
+    return ID
+
+def getItemkID(item):
+    try:
+        ID = Item[item]
+    except:
+        ID = None
+
+    return ID
+
+if __name__ == "__main__":
+    from mcpi.minecraft import Minecraft
+    mc = Minecraft.create()
+
+    mc.postToChat("This is a secret file that should only be used for commands :p")
