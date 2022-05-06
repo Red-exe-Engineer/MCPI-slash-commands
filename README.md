@@ -11,4 +11,4 @@ https://github.com/Red-exe-Engineer/MCPI-slash-commands-plugins
 Simply name your file (command_name).py and do what you want
 
 # Submitting plugins
-Fork, add plugin, make PR
+Fork **(THE PLUGINS REPO)**, add your file, make PR
