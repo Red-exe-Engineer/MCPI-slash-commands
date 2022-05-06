@@ -1,4 +1,4 @@
-Created by Wallee#8314/Red-exe-Engineer
+# Created by Wallee#8314/Red-exe-Engineer
 
 # Imports
 from mcpi.minecraft import Minecraft
