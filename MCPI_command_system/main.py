@@ -17,14 +17,16 @@ def capture(exe):
     # Use subprocess to link the games output to a variable
     game = subprocess.Popen(exe, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
-    # Repeat for a long time
+    # Repeat until "break" is executed
     while True:
 
         # Get a message
         message = game.poll() 
 
-        # Read and yield stuff
+        # Read the line
         line = game.stdout.readline()
+        
+        # Yield the line
         yield line
 
         # Check if message is not None
@@ -35,37 +37,40 @@ def capture(exe):
 
 # Define a method to run commands and plugins
 def command(command):
+    
+    # Define a variable to store the commands name
+    command_name = command.split(" ")[0]
 
     # Check if the command is in the plugins folder, the reason I check plugins first is so they *can* override default commands
-    if command.split(" ")[0] + ".py" in listdir("plugins") and not command.startswith("."):
+    if command_name + ".py" in listdir("plugins") and not command.startswith("_"):
 
-        # The plugin may be in development and has a lots of errors/bugs
+        # The plugin might be in development and have errors/bugs
         try:
 
             # Set args to the arguments the user provided
-            args = command[len(command.split(" ")[0]):]
+            args = command[len(command_name):]
 
             # Run the plugin through a subprocess
-            subprocess.run(args = f'python3 plugins/{command.split(" ")[0]}.py {args}', shell=True, check=True)
+            subprocess.run(args = f'python3 plugins/{command_name}.py {args}', shell=True, check=True)
 
-        # Someone is a bad coder 0_0 (We all make mistakes)
+        # An error occurred
         except Exception as error:
 
             # Post some error info to chat
-            mc.postToChat(f'Fatal error in {command.split(" ")[0]} plugin!')
-            mc.postToChat("Check terminal output for a traceback")
+            mc.postToChat(f'Fatal error in {command_name} plugin!')
+            mc.postToChat("Check the terminal output for a traceback")
 
     # Check if the command is in the commands folder
-    elif command.split(" ")[0]+".py" in listdir("commands"):
+    elif command_name+".py" in listdir("commands"):
 
         # Still use a try and except statement even though all command files should already use one
         try:
 
             # Set args to the arguments the user provided
-            args = command[len(command.split(" ")[0]):]
+            args = command[len(command_name):]
 
             # Run the command through a subproess
-            subprocess.run(args = f'python3 commands/{command.split(" ")[0]}.py {args}', shell=True, check=True)
+            subprocess.run(args = f'python3 commands/{command_name}.py {args}', shell=True, check=True)
 
         # Oops, wasn't me
         except:
@@ -77,7 +82,7 @@ def command(command):
     else:
 
         # Tell the user that command doesn't exist
-        mc.postToChat(f'Command "/{command.split(" ")[0]}" doesn\'t exist')
+        mc.postToChat(f'Command "/{command_name}" doesn\'t exist')
 
 # Repeat capture and start MCPI
 for line in capture("minecraft-pi-reborn-client"):

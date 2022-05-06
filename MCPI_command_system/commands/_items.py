@@ -2,7 +2,7 @@
 # Thanks @Bigjango helping :p
 
 # Modified to work with lowercase words
-# This isn't a command but is used by some
+# This isn't a command but is used by some other commands
 
 Block = {
     "air": [0, 0],
@@ -470,4 +470,4 @@ if __name__ == "__main__":
     from mcpi.minecraft import Minecraft
     mc = Minecraft.create()
 
-    mc.postToChat("This is a secret file that should only be used for commands :p")
+    mc.postToChat("This is a helper file that should only be used for commands :p")

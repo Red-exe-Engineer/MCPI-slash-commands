@@ -6,6 +6,7 @@
     RULES:
      Names must be lowercase and should only use a-z and underscores
      Names must also end with .py and must not be a hidden file, reason is so plugins can make directories that wont look like a plugin to the MCPI command code
+     If a plugin starts with an underscore it will be ignored
      Please put your name and or alias at the top of the plugins code
      Comment stuff well, it is usefull for those who do not know how to make plugins
      Any plugin made may cause an error, to avoid fatal errors use try and except statements around most of your code
